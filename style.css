@@ -583,8 +583,10 @@ h4 {
 }
 
 
-
 /* MODAL WINDOW */
+
+/*  create a modal dialog (popup window) with a form for opening a bank account, along with an overlay that darkens the rest of the page when the modal is active. */
+
 .modal {
   direction: rtl;
   position: fixed;
