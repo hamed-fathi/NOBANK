@@ -1,5 +1,3 @@
-/* The page is NOT responsive. You can implement responsiveness yourself if you wanna have some fun 😃 */
-
 :root {
   --color-primary: #5ec576;
   --color-secondary: #ffcb03;
@@ -41,7 +39,9 @@ body {
   transition: transform 1s, opacity 1s;
   direction: rtl;
 }
-
+.container {
+  max-width: 140rem;
+}
 .section--hidden {
   opacity: 0;
   transform: translateY(8rem);
@@ -96,14 +96,19 @@ body {
   cursor: pointer;
   transition: all 0.3s;
   direction: rtl;
-
 }
 
 p {
   color: #666;
 }
+.mobile-menu {
+  /* display: none; */
+}
+.mobile-menu-icon {
+  width: 4.8rem;
+  height: 4.8rem;
+}
 
-/* This is BAD for accessibility! Don't do in the real world! */
 button:focus {
   outline: none;
 }
@@ -134,7 +139,7 @@ img {
 }
 
 .nav__logo {
-  width:22rem;
+  width: 22rem;
   height: 11rem;
   transition: all 0.3s;
 }
@@ -173,7 +178,48 @@ img {
   background-color: var(--color-primary-darker);
   color: #333;
 }
+/* mobile navigation */
+.mobile-menu-btn {
+  display: none;
+}
+/* .mobile-menu-btn {
+  display: none;
+} */
+.mobile-menu .nav__links {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  align-items: end;
+  position: fixed;
+  top: 10rem;
+  right: 10%;
+  background-color: #f3f3f3;
+  z-index: 999;
+  padding: 5rem 6rem;
+  box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
+  transition: all 0.5s;
+  border-radius: 1rem;
+}
+.mobile-menu .nav__link--btn:link,
+.mobile-menu .nav__link--btn:visited {
+  padding: 0;
+  border-radius: 0;
+  background-color: unset;
+  color: unset;
+}
 
+.overlay-mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(1px);
+  z-index: 999;
+  transition: all 0.5s;
+}
+/* ///////////////////////// */
 /* HEADER */
 .header {
   padding: 0 3rem;
@@ -200,21 +246,21 @@ img {
 
 h1 {
   font-size: 5.5rem;
-  line-height: 1.35;  direction: rtl;
-
+  line-height: 1.35;
+  direction: rtl;
 }
 
 h4 {
   font-size: 2.4rem;
-  font-weight: 500;  direction: rtl;
-
+  font-weight: 500;
+  direction: rtl;
 }
 
 .header__img {
   width: 100%;
   grid-column: 2 / 3;
   grid-row: 1 / span 4;
-  transform: translateY(-6rem);
+  transform: translateY(4rem);
 }
 
 .highlight {
@@ -223,7 +269,7 @@ h4 {
 
 .highlight::after {
   display: block;
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -476,7 +522,7 @@ h4 {
 }
 
 .testimonial::before {
-  content: '\201C';
+  content: "\201C";
   position: absolute;
   top: -5.7rem;
   left: -6.8rem;
@@ -582,7 +628,6 @@ h4 {
   margin-bottom: 5rem;
 }
 
-
 /* MODAL WINDOW */
 
 /*  create a modal dialog (popup window) with a form for opening a bank account, along with an overlay that darkens the rest of the page when the modal is active. */
@@ -672,4 +717,140 @@ h4 {
   color: #bbb;
   font-size: 1.5rem;
   font-weight: 400;
+}
+
+/* queries */
+/* 1200/16 */
+@media (max-width: 75em) {
+  html {
+    /* 8/16 */
+    font-size: 50%;
+  }
+  .container {
+    max-width: 150rem;
+  }
+}
+/* 1000/16 */
+@media (max-width: 62.5em) {
+  html {
+    /* 8/16 */
+    font-size: 50%;
+  }
+}
+/* 800/16 */
+@media (max-width: 50em) {
+  html {
+    /* 7/16 */
+    font-size: 43.75%;
+  }
+
+  .header__title {
+    margin-top: 15rem;
+  }
+  .nav__item {
+    margin-left: 2rem;
+  }
+}
+/* 700/16 */
+@media (max-width: 43.75em) {
+  .container {
+    max-width: 95rem;
+  }
+  .features {
+    grid-template-columns: 1fr;
+  }
+  .box--2 {
+    grid-row: 4;
+  }
+  .features__feature {
+    width: 90%;
+  }
+}
+/* 600/16 */
+@media (max-width: 37.5em) {
+  html {
+    /* 6/16 */
+    font-size: 37.5%;
+  }
+  .header__title {
+    margin-top: 15rem;
+  }
+  .nav__item {
+    margin-left: 2rem;
+  }
+  .nav__logo {
+    width: 14rem;
+    height: 8rem;
+  }
+  .btn {
+    padding: 1.5rem 2rem;
+  }
+  .footer__nav {
+    direction: rtl;
+  }
+}
+/* 450/16 */
+@media (max-width: 28.125em) {
+  .nav {
+    width: 115%;
+    padding: 4rem 9rem;
+  }
+  .header__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #section--1 {
+    margin-top: 35rem;
+  }
+  .features {
+    margin: 0;
+  }
+  .operations__content--active {
+    display: flex;
+    flex-direction: column;
+  }
+  .operations__icon {
+    display: none;
+  }
+  .btn {
+    font-size: 1.3rem;
+  }
+  .operations__tab:first-child {
+    margin-right: 0;
+  }
+  .footer__nav {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 3.2rem;
+  }
+  .footer__item {
+    margin-right: 0;
+  }
+  .nav__links {
+    display: none;
+  }
+  .mobile-menu-btn {
+    display: flex;
+  }
+  .nav__logo {
+    width: 22rem;
+    height: 11rem;
+  }
+}
+/* 350/16 */
+@media (max-width: 21.875em) {
+  html {
+    /* 5/16 */
+    font-size: 31.25%;
+  }
+}
+/* 250/16 */
+@media (max-width: 15.625em) {
+  html {
+    /* 4/16 */
+    font-size: 25%;
+  }
 }

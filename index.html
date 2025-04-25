@@ -44,9 +44,45 @@
             >
           </li>
         </ul>
+        <div class="mobile-menu-btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="mobile-menu-icon"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
+          </svg>
+        </div>
       </nav>
 
-      <div class="header__title">
+      <!-- mobile menu -->
+      <div class="mobile-menu overlay-mobile hidden">
+        <ul class="nav__links">
+          <li class="nav__item">
+            <a class="nav__link" href="#section--1">امکانات</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#section--2">عملیات ها</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#section--3">نظرات</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link nav__link--btn btn--show-modal" href="#"
+              >باز کردن حساب</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div class="header__title container">
         <!-- <h1 onclick="alert('HTML alert')"> -->
         <h1>
           اولین
@@ -65,7 +101,7 @@
       </div>
     </header>
 
-    <section class="section" id="section--1">
+    <section class="section container" id="section--1">
       <div class="section__title">
         <h2 class="section__description">امکانات</h2>
         <h3 class="section__header">
@@ -80,27 +116,31 @@
           alt="Computer"
           class="features__img lazy-img"
         />
-        <div class="features__feature">
+        <div class="features__feature box--1">
           <div class="features__icon">
             <svg>
-              <use xlink:href="img/icons.svg#icon-monitor"></use>
+              <use xlink:href="img/icons.png"></use>
             </svg>
           </div>
           <h5 class="features__header">بانک دیجیتالی 100%</h5>
           <p>
-            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است. 
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+            استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در
+            ستون و سطرآنچنان که لازم است.
           </p>
         </div>
 
-        <div class="features__feature">
+        <div class="features__feature box--2">
           <div class="features__icon">
             <svg>
-              <use xlink:href="img/icons.svg#icon-trending-up"></use>
+              <use xlink:href="img/icons.png"></use>
             </svg>
           </div>
           <h5 class="features__header">سود پول خود را مشاهده کنید.</h5>
           <p>
-            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است!
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+            استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در
+            ستون و سطرآنچنان که لازم است!
           </p>
         </div>
         <img
@@ -116,26 +156,26 @@
           alt="Credit card"
           class="features__img lazy-img"
         />
-        <div class="features__feature">
+        <div class="features__feature box--3">
           <div class="features__icon">
             <svg>
-              <use xlink:href="img/icons.svg#icon-credit-card"></use>
+              <use xlink:href="img/icons.png"></use>
             </svg>
           </div>
           <h5 class="features__header">خدمات حسابداری رایگان</h5>
           <p>
-            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است. 
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+            استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در
+            ستون و سطرآنچنان که لازم است.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="section" id="section--2">
+    <section class="section container" id="section--2">
       <div class="section__title">
         <h2 class="section__description">عملیات ها</h2>
-        <h3 class="section__header">
-          بانکداری از این ساده تر نمیشه!
-        </h3>
+        <h3 class="section__header">بانکداری از این ساده تر نمیشه!</h3>
       </div>
 
       <div class="operations">
@@ -158,51 +198,58 @@
         >
           <div class="operations__icon operations__icon--1">
             <svg>
-              <use xlink:href="img/icons.svg#icon-upload"></use>
+              <use xlink:href="img/icons.png"></use>
             </svg>
           </div>
           <h5 class="operations__header">
             به هر شخصی و در هر زمانی بدون کارمزد وجه انتقال دهید.
           </h5>
           <p>
-            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است. 
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+            استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در
+            ستون و سطرآنچنان که لازم است.
           </p>
         </div>
 
         <div class="operations__content operations__content--2">
           <div class="operations__icon operations__icon--2">
             <svg>
-              <use xlink:href="img/icons.svg#icon-home"></use>
+              <use xlink:href="img/icons.png"></use>
             </svg>
           </div>
           <h5 class="operations__header">
             به کمک وام در لحظه رویا های خود را به واقعیت تبدیل کنید.
           </h5>
           <p>
-            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است. 
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+            استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در
+            ستون و سطرآنچنان که لازم است.
           </p>
         </div>
         <div class="operations__content operations__content--3">
           <div class="operations__icon operations__icon--3">
             <svg>
-              <use xlink:href="img/icons.svg#icon-user-x"></use>
+              <use xlink:href="img/icons.png"></use>
             </svg>
           </div>
           <h5 class="operations__header">
             به حساب خود نیازی ندارید؟ اشکالی نداره! در لحظه حساب را ببندید.
           </h5>
           <p>
-            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است. 
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+            استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در
+            ستون و سطرآنچنان که لازم است.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="section" id="section--3">
+    <section class="section container" id="section--3">
       <div class="section__title section__title--testimonials">
         <h2 class="section__description">هنوز مطمئن نیستید؟</h2>
         <h3 class="section__header">
-          در حال حاضر هزاران نفر با استفاده از نو بانک زندگی خود را ساده تر ساخته اند.
+          در حال حاضر هزاران نفر با استفاده از نو بانک زندگی خود را ساده تر
+          ساخته اند.
         </h3>
       </div>
 
@@ -211,7 +258,9 @@
           <div class="testimonial">
             <h5 class="testimonial__header">بهترین تصمیم اقتصادی شما!</h5>
             <blockquote class="testimonial__text">
-              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است. 
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+              استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله
+              در ستون و سطرآنچنان که لازم است.
             </blockquote>
             <address class="testimonial__author">
               <img src="img/user-1.jpg" alt="" class="testimonial__photo" />
@@ -224,9 +273,12 @@
         <div class="slide">
           <div class="testimonial">
             <h5 class="testimonial__header">
-اخرین مرحله برای رسیدن به زندگی مینیمالیستی            </h5>
+              اخرین مرحله برای رسیدن به زندگی مینیمالیستی
+            </h5>
             <blockquote class="testimonial__text">
-              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است. 
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+              استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله
+              در ستون و سطرآنچنان که لازم است.
             </blockquote>
             <address class="testimonial__author">
               <img src="img/user-2.jpg" alt="" class="testimonial__photo" />
@@ -239,10 +291,12 @@
         <div class="slide">
           <div class="testimonial">
             <h5 class="testimonial__header">
-             بالاخره همون بانکی که دنبالش بودم!
+              بالاخره همون بانکی که دنبالش بودم!
             </h5>
             <blockquote class="testimonial__text">
-              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است. 
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+              استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله
+              در ستون و سطرآنچنان که لازم است.
             </blockquote>
             <address class="testimonial__author">
               <img src="img/user-3.jpg" alt="" class="testimonial__photo" />
@@ -261,10 +315,12 @@
     <section class="section section--sign-up">
       <div class="section__title">
         <h3 class="section__header">
-         زودتر از این حرفا باید عضو نوبانک میشدی! همین الان شروع کن.
+          زودتر از این حرفا باید عضو نوبانک میشدی! همین الان شروع کن.
         </h3>
       </div>
-      <button class="btn btn--show-modal">حساب رایگانت رو همین حالا باز کن.</button>
+      <button class="btn btn--show-modal">
+        حساب رایگانت رو همین حالا باز کن.
+      </button>
     </section>
 
     <footer class="footer">
@@ -292,15 +348,14 @@
         </li>
       </ul>
       <img src="img/icon.png" alt="Logo" class="footer__logo" />
-
     </footer>
 
     <div class="modal hidden">
       <button class="btn--close-modal">&times;</button>
       <h2 class="modal__header">
-       حساب بانکی خود را در  <br />
-         <span class="highlight">5 دقیقه</span>
-         باز کنید.
+        حساب بانکی خود را در <br />
+        <span class="highlight">5 دقیقه</span>
+        باز کنید.
       </h2>
       <form class="modal__form">
         <label>نام</label>
