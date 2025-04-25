@@ -266,7 +266,7 @@ const slider = function () {
   };
 
   // Next slide
-  const nextSlide = function () {
+  const prevSlide = function () {
     if (curSlide === maxSlide - 1) {
       curSlide = 0;
     } else {
@@ -277,7 +277,7 @@ const slider = function () {
     activateDot(curSlide);
   };
 
-  const prevSlide = function () {
+  const nextSlide = function () {
     if (curSlide === 0) {
       curSlide = maxSlide - 1;
     } else {
@@ -310,6 +310,57 @@ const slider = function () {
       goToSlide(slide);
       activateDot(slide);
     }
+  });
+
+  // // --- Add touch support for sliders ---
+
+  let startX = 0;
+  let endX = 0;
+  // --- Get the starting X position ---
+  slides.forEach((s) => {
+    s.addEventListener(`touchstart`, (e) => {
+      startX = e.touches[0].clientX;
+    });
+    // --- Update the current X position ---
+    s.addEventListener(`touchmove`, (e) => {
+      endX = e.touches[0].clientX;
+    });
+    // --- calc move ---
+    const swipeValue = 50;
+    s.addEventListener(`touchend`, (e) => {
+      const diffX = startX - endX;
+      if (diffX > swipeValue) {
+        // --- Swipe left ---
+        prevSlide();
+      } else if (diffX < swipeValue) {
+        // --- Swipe right ---
+        nextSlide();
+      }
+    });
+  });
+
+  // --- smooth scroll ---
+  // --- define interval Globaly so we can have access to it outside of startAutoScroll ---
+  let scrollInterval;
+
+  const startAutoScroll = () => {
+    // --- Clear any existing interval ---
+    stopAutoScroll();
+    // --- Start new interval and store its ID ---
+    scrollInterval = setInterval(nextSlide, 3000);
+  };
+
+  const stopAutoScroll = () => {
+    clearInterval(scrollInterval);
+  };
+
+  // Start initially
+  startAutoScroll();
+  slides.forEach((s) => {
+    s.addEventListener("mouseenter", stopAutoScroll);
+    s.addEventListener("mouseleave", startAutoScroll);
+    s.addEventListener("touchstart", stopAutoScroll);
+    s.addEventListener("touchend", startAutoScroll);
   });
 };
 slider();
